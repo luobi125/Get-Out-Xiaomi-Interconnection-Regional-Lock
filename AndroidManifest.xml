@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dsh.mirrorfix"
+    android:versionCode="50"
+    android:versionName="5.0">
+
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="34" />
+
+    <application
+        android:label="MirrorFix"
+        android:persistent="false">
+
+        <meta-data android:name="xposedmodule"        android:value="true" />
+        <meta-data android:name="xposeddescription"   android:value="解除小米互联对电脑的跨区域限制：设备互联 / 融合设备中心 / 剪贴板 / 电量" />
+        <meta-data android:name="xposedminversion"    android:value="93" />
+        <meta-data android:name="xposedscope"         android:resource="@array/xposedscope" />
+    </application>
+
+</manifest>
