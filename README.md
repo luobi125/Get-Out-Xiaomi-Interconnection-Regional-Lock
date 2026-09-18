@@ -1,4 +1,4 @@
-# get-out-Xiaomi-Interconnection-Regional-Lock
+# Get-Out-Xiaomi-Interconnection-Regional-Lock
 
 解除**小米互联对「电脑」的跨区域限制**。
 
@@ -11,7 +11,7 @@
 - 共享通道建不起来 → 读不到电脑电量
 - 投屏 / 协同等与这台电脑相关的功能全部不可用
 
-**v5.0：只有两个 hook，不硬编码任何设备 ID / 型号 / 品牌，只对电脑生效。**
+**v1.0：只有两个 hook，不硬编码任何设备 ID / 型号 / 品牌，只对电脑生效。**
 
 ---
 
