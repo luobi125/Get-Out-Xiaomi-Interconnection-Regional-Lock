@@ -1,4 +1,4 @@
-# MirrorFix
+# get-out-Xiaomi-Interconnection-Regional-Lock
 
 解除**小米互联对「电脑」的跨区域限制**。
 
@@ -11,7 +11,7 @@
 - 共享通道建不起来 → 读不到电脑电量
 - 投屏 / 协同等与这台电脑相关的功能全部不可用
 
-**v1.0：只有两个 hook，不硬编码任何设备 ID / 型号 / 品牌，只对电脑生效。**
+**v5.0：只有两个 hook，不硬编码任何设备 ID / 型号 / 品牌，只对电脑生效。**
 
 ---
 
@@ -167,7 +167,7 @@ param.setResult(localRegion);       // 让 equals 恒成立
 
 **让电脑上报 `cn` 才是根治，之后不需要任何模块。**
 
-实测：把电脑上的小米电脑管家换成国内发行版后，
+实测：把电脑上的区域改成中国，并开启自动设置时区后，
 `build_region` 由 `us` 变为 `cn`，上述 5 条症状全部消失，模块全程关闭。
 
 | | 换之前 | 换之后 |
@@ -188,11 +188,11 @@ I/UniClipLyraUtil: isSameRegionWithLocal, localRegion = cn, targetRegion = cn
 I/Cir_MDC_MDC: refresh export device sequence, size: 2
 ```
 
-所以建议顺序：**先尝试换电脑区域；换不了或换了仍是 `us`，再用本模块。**
+所以建议顺序：**先尝试更改时区并开启自动设置时区后；换不了或换了仍是 `us`，再用本模块。**
 
 > 补充：电脑的区域值读的是注册表 `HKCU\Control Panel\International\Geo\Name`，
 > 所以改这个键也可以 —— 但改完必须**完全退出并重启小米电脑管家**（它启动时读一次就缓存），
-> 否则不会生效。只改 Windows 的「区域格式」无效，需要开启自动设置时区。
+> 否则不会生效。只改 Windows 的「区域格式」无效，那个写的是另一个键。
 > 想保留系统区域不动的话，社区项目
 > [MiPCManager_Patch](https://github.com/Higanoneko/MiPCManager_Patch) 的 LocaleSpoof
 > 补丁把 `micont_rtm.dll` 读取的值名从 `Name` 改成 `XCN`，再写 `XCN=CN` 即可。
@@ -355,4 +355,4 @@ adb shell uiautomator dump /sdcard/ui.xml && adb pull /sdcard/ui.xml
 
 ## 许可
 
-MIT。见 [LICENSE](LICENSE)。发布前请把 LICENSE 里的 `<作者>` 换成你自己的署名。
+MIT 见 [LICENSE](LICENSE)
